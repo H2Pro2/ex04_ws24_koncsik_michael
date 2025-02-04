@@ -1,5 +1,10 @@
 # Koncsik Michael
-# Test
+
+import score
+import lyrics
 
 def main():
-    return False
+    print(score.score(lyrics.RESPECT))
+
+if __name__ == "__main__":
+    main()
