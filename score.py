@@ -238,7 +238,28 @@ def score(lyrics: str) -> float:
     or any functions that you have to be imported
     """
     # TODO
-    return 0.0
 
+    list_of_lyrics = extract_words(lyrics)
+    SAW = 0
+    for words in list_of_lyrics:
+        SAW += len(words)
+
+    list_of_uniq_lyrics = uniq(list_of_lyrics)
+    SUW = 0
+    for words in list_of_uniq_lyrics:
+        SUW += len(words)
+
+    len_list = []
+    for words in list_of_lyrics:
+        len_list.append(len(words))
+    SCAW = sum(counts(len_list))
+
+    len_uniq_list = []
+    for words in list_of_uniq_lyrics:
+        len_uniq_list.append(len(words))
+    SCUW = sum(counts(len_uniq_list))
+
+
+    return (SCAW - SCUW)/(SAW - SUW + 1)
 
 # END OF YOUR TASK'S
