@@ -95,7 +95,11 @@ def lengths(strings: list[str]) -> list[int]:
     Do NOT use list comprehension or ternary operator!
     """
     # TODO
-    return []
+    len_list = []
+    for words in strings:
+        if len(words) != 0:
+            len_list.append(len(words))
+    return len_list
 
 
 def min(numbers: list[int]) -> int:
