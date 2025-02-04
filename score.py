@@ -190,7 +190,23 @@ def counts(numbers: list[int]) -> list[int]:
     Do NOT use list comprehension or ternary conditions!
     """
     # TODO
-    return []
+    if len(numbers) == 0:
+        return []
+    else:
+        i = min(numbers)
+        item_list = []
+        range_list = []
+        range_list.append(min(numbers))
+        while i < max(numbers):
+            i += 1
+            range_list.append(i)
+        for range_items in range_list:
+            item_count = 0
+            for number_items in numbers:
+                if number_items == range_items:
+                    item_count += 1
+            item_list.append(item_count)
+        return item_list
 
 
 def score(lyrics: str) -> float:
