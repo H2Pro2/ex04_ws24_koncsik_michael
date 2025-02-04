@@ -17,7 +17,6 @@ def remove_non_alpha(string: str) -> str:
     Do NOT use list comprehension or ternary operator!
     """
     # TODO
-
     non_alpha_removed = ""
     for char in string:
         if char.isalpha():
@@ -46,7 +45,13 @@ def extract_words(lyrics: str) -> list[str]:
     Do NOT use list comprehension or ternary operator!
     """
     # TODO
-    return []
+    extracted = []
+    lyrics_list = lyrics.split()
+    for words in lyrics_list:
+        extracted.append(remove_non_alpha(words).lower())
+    while("" in extracted):
+        extracted.remove("")
+    return extracted
 
 
 def uniq(strings: list[str]) -> list[str]:
