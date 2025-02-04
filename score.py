@@ -1,4 +1,4 @@
-# Author: <ENTER YOUR NAME>
+# Author: Koncsik Michael
 
 # YOUR TASK'S: IMPLEMENT THE FOLLOWING FUNCTIONS
 
@@ -17,7 +17,12 @@ def remove_non_alpha(string: str) -> str:
     Do NOT use list comprehension or ternary operator!
     """
     # TODO
-    return ''
+
+    non_alpha_removed = ""
+    for char in string:
+        if char.isalpha():
+            non_alpha_removed += char
+    return non_alpha_removed
 
 
 def extract_words(lyrics: str) -> list[str]:
