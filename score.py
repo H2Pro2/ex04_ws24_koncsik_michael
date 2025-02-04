@@ -121,7 +121,19 @@ def min(numbers: list[int]) -> int:
     Do NOT use list comprehension or ternary conditions!
     """
     # TODO
-    return 0
+    min_list = []
+    for items in numbers:
+        if items >= 0:
+            min_list.append(items)
+
+    for items in min_list:
+        if items < min_list[-1]:
+            min_list.append(items)
+    
+    if len(min_list) == 0:
+        min_list.append(0)
+
+    return min_list[-1]
 
 
 def max(numbers: list[int]) -> int:
