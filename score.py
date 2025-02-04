@@ -155,7 +155,19 @@ def max(numbers: list[int]) -> int:
     Do NOT use list comprehension or ternary conditions!
     """
     # TODO
-    return 0
+    max_list = []
+    for items in numbers:
+        if items >= 0:
+            max_list.append(items)
+
+    for items in max_list:
+        if items > max_list[-1]:
+            max_list.append(items)
+    
+    if len(max_list) == 0:
+        max_list.append(0)
+
+    return max_list[-1]
 
 
 def counts(numbers: list[int]) -> list[int]:
