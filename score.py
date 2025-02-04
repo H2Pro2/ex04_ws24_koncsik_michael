@@ -70,7 +70,11 @@ def uniq(strings: list[str]) -> list[str]:
     Do NOT use list comprehension or ternary operator!
     """
     # TODO
-    return []
+    uniq_list = []
+    for items in strings:
+        if items not in uniq_list:
+            uniq_list.append(items)
+    return uniq_list
 
 
 def lengths(strings: list[str]) -> list[int]:
